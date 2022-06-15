@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 
 import HomeComponent from './pages/HomeComponent'
 import ContactsComponent from './pages/ContactsComponent'
+import NotfoundComponent from './pages/NotfoundComponent'
 
 
 //definiamo le rotte
@@ -19,8 +20,13 @@ const router = new VueRouter({
         },
         {
             path: '/contacts',
-            name: 'hcontactsome',
+            name: 'contacts',
             component: ContactsComponent
+        },
+        {
+            path: '/*',
+            name: 'notFound',
+            component: NotfoundComponent
         }
     ]
 })
