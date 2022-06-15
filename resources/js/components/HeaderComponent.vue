@@ -2,9 +2,8 @@
     <header>
         <nav>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <router-link :to="{name: 'contacts'}">Contatti</router-link>
-
+                <li v-for="(menuItem, index) in menu" :key="index" class="nav-item">
+                    <router-link :to="{name: menuItem.linkName}">{{menuItem.label}}</router-link>
                 </li>
             </ul>
         </nav>
@@ -13,6 +12,16 @@
 
 <script>
     export default {
-        name: 'HeaderComponent'
+        name: 'HeaderComponent',
+        data(){
+            return{
+                menu: [
+                    {linkName: 'home', label: 'Home'},
+                    {linkName: 'blog', label: 'Blog'},
+                    {linkName: 'chi-siamo', label: 'Chi siamo'},
+                    {linkName: 'contacts', label: 'Contatti'}
+                ]
+            }
+        }
     }
 </script>

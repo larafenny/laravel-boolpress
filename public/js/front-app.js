@@ -1947,9 +1947,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'HeaderComponent'
+  name: 'HeaderComponent',
+  data: function data() {
+    return {
+      menu: [{
+        linkName: 'home',
+        label: 'Home'
+      }, {
+        linkName: 'blog',
+        label: 'Blog'
+      }, {
+        linkName: 'chi-siamo',
+        label: 'Chi siamo'
+      }, {
+        linkName: 'contacts',
+        label: 'Contatti'
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -37671,18 +37687,25 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("header", [
     _c("nav", [
-      _c("ul", { staticClass: "navbar-nav" }, [
-        _c(
-          "li",
-          { staticClass: "nav-item" },
-          [
-            _c("router-link", { attrs: { to: { name: "contacts" } } }, [
-              _vm._v("Contatti"),
-            ]),
-          ],
-          1
-        ),
-      ]),
+      _c(
+        "ul",
+        { staticClass: "navbar-nav" },
+        _vm._l(_vm.menu, function (menuItem, index) {
+          return _c(
+            "li",
+            { key: index, staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                { attrs: { to: { name: menuItem.linkName } } },
+                [_vm._v(_vm._s(menuItem.label))]
+              ),
+            ],
+            1
+          )
+        }),
+        0
+      ),
     ]),
   ])
 }
