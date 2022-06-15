@@ -1,6 +1,6 @@
 <template>
     <div>
-        work in progress
+        <router-view></router-view>
     </div>
 </template>
 
