@@ -8,6 +8,7 @@ import HomeComponent from './pages/HomeComponent'
 import ContactsComponent from './pages/ContactsComponent'
 import NotfoundComponent from './pages/NotfoundComponent'
 import BlogComponent from './pages/BlogComponent'
+import ChisiamoComponent from './pages/ChisiamoComponent'
 
 
 //definiamo le rotte
@@ -18,6 +19,11 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: HomeComponent
+        },
+        {
+            path: '/chi-siamo',
+            name: 'chi-siamo',
+            component: ChisiamoComponent
         },
         {
             path: '/contacts',
