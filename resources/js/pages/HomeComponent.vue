@@ -1,6 +1,5 @@
 <template>
 <div>
-    <HeaderComponent/>
   <div>HOME</div>
 </div>
 
