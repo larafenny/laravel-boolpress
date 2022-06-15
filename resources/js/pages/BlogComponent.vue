@@ -1,12 +1,10 @@
 <template>
-  <div>404</div>
-
-
+  <div>BLOG</div>
 </template>
 
 <script>
 export default {
-    name: 'NotfoundComponent'
+    name: 'BlogComponent'
 
 }
 
