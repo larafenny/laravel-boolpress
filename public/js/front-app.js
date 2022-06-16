@@ -1983,9 +1983,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostCardComponent',
-  props: ['post']
+  props: ['title', 'content']
 });
 
 /***/ }),
@@ -2013,7 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostListComponent',
-  props: ['posts'],
+  props: ['posts', 'content'],
   components: {
     PostCardComponent: _components_PostCardComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -37820,7 +37824,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v(_vm._s(_vm.post.title))])
+  return _c("div", [
+    _c("div", [_vm._v(_vm._s(_vm.title))]),
+    _vm._v(" "),
+    _c("div", [_vm._v(_vm._s(_vm.content))]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37853,7 +37861,15 @@ var render = function () {
         return _c(
           "div",
           { key: "index" },
-          [_c("PostCardComponent", { attrs: { post: post } })],
+          [
+            _c("PostCardComponent", {
+              attrs: {
+                title: post.title,
+                cover: post.cover,
+                content: post.content,
+              },
+            }),
+          ],
           1
         )
       }),

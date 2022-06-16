@@ -1,11 +1,15 @@
 <template>
-    <div>{{post.title}}</div>
+    <div>
+        <div>{{title}}</div>
+        <div>{{content}}</div>
+    </div>
+
 </template>
 
 <script>
 export default {
     name: 'PostCardComponent',
-    props: ['post']
+    props: ['title', 'content']
 
 }
 </script>
