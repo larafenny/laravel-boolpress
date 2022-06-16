@@ -1,10 +1,24 @@
 <template>
-    <div>BLOG</div>
+    <div>
+        <div>BLOG</div>
+        <div>
+            <PostCardComponent />
+
+        </div>
+    </div>
+
+
 </template>
 
 <script>
+
+import PostCardComponent from '../components/PostCardComponent.vue'
+
 export default {
     name: 'BlogComponent',
+    components: {
+        PostCardComponent
+    },
     data(){
         return{
             posts: []
