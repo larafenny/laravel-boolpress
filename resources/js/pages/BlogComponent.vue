@@ -2,7 +2,7 @@
     <div>
         <div>BLOG</div>
         <div>
-            <PostCardComponent />
+            <PostListComponent />
 
         </div>
     </div>
@@ -12,12 +12,15 @@
 
 <script>
 
+import PostListComponent from '../components/PostListComponent.vue'
 import PostCardComponent from '../components/PostCardComponent.vue'
 
 export default {
     name: 'BlogComponent',
     components: {
-        PostCardComponent
+        PostListComponent,
+        PostCardComponent,
+
     },
     data(){
         return{
