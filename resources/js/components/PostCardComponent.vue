@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div>{{title}}</div>
-        <div>{{content}}</div>
+        <div class="title">{{title}}</div>
+        <div class="content">{{content}}</div>
     </div>
 
 </template>
@@ -14,6 +14,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+.title{
+    color: red;
+}
+
+.content{
+    color: blue;
+}
+
+</style>>
 
 </style>
