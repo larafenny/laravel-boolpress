@@ -2,7 +2,7 @@
     <div>
         <div>BLOG</div>
         <div>
-            <PostListComponent />
+            <PostListComponent :posts="posts"/>
 
         </div>
     </div>

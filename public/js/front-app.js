@@ -1984,7 +1984,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'PostCardComponent'
+  name: 'PostCardComponent',
+  props: ['post']
 });
 
 /***/ }),
@@ -1998,12 +1999,24 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_PostCardComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PostCardComponent.vue */ "./resources/js/components/PostCardComponent.vue");
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'PostListComponent'
+  name: 'PostListComponent',
+  props: ['posts'],
+  components: {
+    PostCardComponent: _components_PostCardComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
 
 /***/ }),
@@ -37807,7 +37820,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("postcard")])
+  return _c("div", [_vm._v(_vm._s(_vm.post.title))])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37831,7 +37844,22 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("post list")])
+  return _c(
+    "div",
+    [
+      _c("div", [_vm._v("post list")]),
+      _vm._v(" "),
+      _vm._l(_vm.posts, function (post, index) {
+        return _c(
+          "div",
+          { key: "index" },
+          [_c("PostCardComponent", { attrs: { post: post } })],
+          1
+        )
+      }),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37858,7 +37886,7 @@ var render = function () {
   return _c("div", [
     _c("div", [_vm._v("BLOG")]),
     _vm._v(" "),
-    _c("div", [_c("PostListComponent")], 1),
+    _c("div", [_c("PostListComponent", { attrs: { posts: _vm.posts } })], 1),
   ])
 }
 var staticRenderFns = []
