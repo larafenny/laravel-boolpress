@@ -9,6 +9,7 @@ import ContactsComponent from './pages/ContactsComponent'
 import NotfoundComponent from './pages/NotfoundComponent'
 import BlogComponent from './pages/BlogComponent'
 import ChisiamoComponent from './pages/ChisiamoComponent'
+import SingleBlogComponent from './pages/SingleBlogComponent'
 
 
 //definiamo le rotte
@@ -34,6 +35,11 @@ const router = new VueRouter({
             path: '/blog',
             name: 'blog',
             component: BlogComponent
+        },
+        {
+            path: '/blog/:id',
+            name: 'single-blog',
+            component: SingleBlogComponent
         },
         {
             path: '/*',
