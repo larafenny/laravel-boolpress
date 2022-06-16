@@ -1984,7 +1984,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'BlogComponent'
+  name: 'BlogComponent',
+  data: function data() {
+    return {
+      posts: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    console.log('monted'); //usiamo axios per recuperare la nostra api (utlizziamo promessa)
+
+    window.axios.get('http://127.0.0.1:8000/api/posts').then(function (_ref) {
+      var status = _ref.status,
+          data = _ref.data;
+      console.log(data);
+
+      if (status === 200 & data.success) {
+        _this.posts = data.results;
+      }
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  }
 });
 
 /***/ }),
@@ -37686,14 +37708,14 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("header", [
-    _c("nav", [
+    _c("nav", { staticClass: "navbar navbar-light bg-white" }, [
       _c(
         "ul",
-        { staticClass: "navbar-nav" },
+        { staticClass: "nav" },
         _vm._l(_vm.menu, function (menuItem, index) {
           return _c(
             "li",
-            { key: index, staticClass: "nav-item" },
+            { key: index, staticClass: "nav-item mr-5" },
             [
               _c(
                 "router-link",
@@ -53421,13 +53443,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //recuperiamo axios
 
 
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); //usiamo axios per recuperare la nostra api (utlizziamo promessa)
-
-window.axios.get('http://127.0.0.1:8000/api/posts').then(function (result) {
-  console.log(result);
-})["catch"](function (error) {
-  console.log(error);
-}); //abilitiamo vue
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+/*usiamo axios per recuperare la nostra api (utlizziamo promessa)
+window.axios.get('http://127.0.0.1:8000/api/posts').then(result=>{
+    console.log(result);
+}).catch(error=>{
+    console.log(error);
+})*/
+//abilitiamo vue
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**

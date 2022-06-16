@@ -8,13 +8,14 @@ require('./bootstrap');
 
 //recuperiamo axios
 window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-//usiamo axios per recuperare la nostra api (utlizziamo promessa)
+/*usiamo axios per recuperare la nostra api (utlizziamo promessa)
 window.axios.get('http://127.0.0.1:8000/api/posts').then(result=>{
     console.log(result);
 }).catch(error=>{
     console.log(error);
-})
+})*/
 
 //abilitiamo vue
 window.Vue = require('vue');

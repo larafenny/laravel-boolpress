@@ -1,8 +1,8 @@
 <template>
     <header>
-        <nav>
-            <ul class="navbar-nav">
-                <li v-for="(menuItem, index) in menu" :key="index" class="nav-item">
+        <nav class="navbar navbar-light bg-white">
+            <ul class="nav">
+                <li v-for="(menuItem, index) in menu" :key="index" class="nav-item mr-5">
                     <router-link :to="{name: menuItem.linkName}">{{menuItem.label}}</router-link>
                 </li>
             </ul>
